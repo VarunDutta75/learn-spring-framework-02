@@ -1,11 +1,16 @@
 package com.in28minutes.learn_spring_framework.game;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
+@Qualifier("SupeContraGameQualifier")
 public class SupeContraGame implements GamingConsole {
 	public void up() {
 		System.out.println("up");
 	}
 	public void down() {
-		System.out.println("sit");
+		System.out.println("crouch");
 	}
 	public void left() {
 		System.out.println("Go back");
