@@ -1,4 +1,4 @@
-package com.in28minutes.learn_spring_framework.examples.d1;
+ package com.in28minutes.learn_spring_framework.examples.d1;
 
 import java.util.Arrays;
 
@@ -25,6 +25,10 @@ class ClassB{
 	   this.classA=classA;
 	}
 	
+	public void doSomething() {
+		System.out.println("Do Something");
+	}
+	
 }
 
 @Configuration
@@ -36,7 +40,7 @@ public class LazyInitializationLauncherApplication {
 		try (var context = new AnnotationConfigApplicationContext
 				(LazyInitializationLauncherApplication.class)) {
 			System.out.println("Initialization of context is completed");
-			Context.getBean(ClassB.class);
+			context.getBean(ClassB.class).doSomething();
 		}
 	}
 }
