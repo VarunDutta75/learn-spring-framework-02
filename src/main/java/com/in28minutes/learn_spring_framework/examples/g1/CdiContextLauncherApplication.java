@@ -9,22 +9,27 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
+
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 //@Component
 @Named
 class BusinessService{
 	private DataService dataService;
 	
-	@Autowired
+	//@Autowired
+	@Inject
 	public void setDataService(DataService dataService) {
+		System.out.println("Setter Injection");
 		this.dataService = dataService;
 	}
 	public DataService getDataService() {
-		System.out.println("Setter Injection");
 		return dataService;
 	}	
 }
 
-@Component
+//@Component
+@Named
 class DataService{
 	
 }
